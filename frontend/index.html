@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bionic Reader</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="wordmark">
+      <span class="wordmark-bold">Bio</span>nic <span class="wordmark-bold">Rea</span>der
+    </div>
+    <div class="tagline">bold the front of every word, read the rest by momentum</div>
+  </header>
+
+  <main class="layout">
+
+    <section class="input-pane">
+      <div class="pane-label">01 — input</div>
+
+      <div class="tabs" role="tablist">
+        <button class="tab active" data-tab="paste" role="tab">Paste text</button>
+        <button class="tab" data-tab="upload" role="tab">Upload file</button>
+      </div>
+
+      <div class="tab-panel active" data-panel="paste">
+        <textarea id="text-input" placeholder="Paste or type anything — an article, your notes, a chapter. Try a full paragraph to see the rhythm.">Artificial intelligence is changing the way people learn. Don't underestimate how a well-designed reading aid — even a simple one — can help someone get through a 40-page PDF without losing focus.</textarea>
+      </div>
+
+      <div class="tab-panel" data-panel="upload">
+        <label class="dropzone" id="dropzone" for="file-input">
+          <span class="dropzone-icon">↑</span>
+          <span class="dropzone-text">Drop a .txt, .pdf, or .docx file here, or click to browse</span>
+          <span class="dropzone-filename" id="dropzone-filename"></span>
+        </label>
+        <input type="file" id="file-input" accept=".txt,.pdf,.docx" hidden>
+      </div>
+
+      <div class="strength-control">
+        <div class="strength-row">
+          <span class="strength-name" id="strength-name">MEDIUM</span>
+          <span class="strength-value" id="strength-value">40%</span>
+        </div>
+        <input type="range" id="strength-slider" min="20" max="65" value="40" step="1">
+        <div class="strength-scale">
+          <span>light</span><span>strong</span>
+        </div>
+        <div class="strength-preview" id="strength-preview"></div>
+      </div>
+
+      <div class="actions">
+        <button id="convert-btn" class="primary-btn">Convert →</button>
+        <div class="export-group">
+          <span class="export-label">Export as</span>
+          <button class="export-btn" data-format="txt">TXT</button>
+          <button class="export-btn" data-format="html">HTML</button>
+          <button class="export-btn" data-format="pdf">PDF</button>
+          <button class="export-btn copy-btn" id="copy-btn">Copy</button>
+        </div>
+      </div>
+
+      <div class="status" id="status"></div>
+    </section>
+
+    <section class="output-pane">
+      <div class="pane-label">02 — bionic output</div>
+      <div class="output-surface" id="output">
+        <p class="output-placeholder">Your converted text will appear here.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    Bionic Reader — built in stages: algorithm → text processing → web UI → file support → export
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
