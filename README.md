@@ -18,6 +18,16 @@ letter by letter.
 
 ---
 
+## UI Preview
+
+![Bionic Reader — premium frontend interface showing two-column layout with input panel, bionic strength slider, and reading output](docs/screenshot.jpg)
+
+> **Light · Sepia · Dark** themes — adjustable font size, line spacing & reading width — all persisted in `localStorage`.
+
+---
+
+
+
 ## See it in action
 
 <table>
